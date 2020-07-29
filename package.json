@@ -4,7 +4,9 @@
   "description": "init",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "webpack --config webpack.server.js --watch",
+    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\""
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,14 @@
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
+  },
+  "dependencies": {
+    "-": "0.0.1",
+    "@commitlint/config-conventional": "^9.1.1",
+    "D": "^1.0.0",
+    "babel-loader": "^8.1.0",
+    "express": "^4.17.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
