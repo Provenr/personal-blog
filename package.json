@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "webpack --config webpack.server.js --watch",
-    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\""
+    "dev:start": "nodemon --watch build --exec node \"./build/bundle.js\"",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
@@ -20,11 +21,13 @@
   "homepage": "https://github.com/Provenr/personal-blog#readme",
   "devDependencies": {
     "commitlint": "^9.1.0",
-    "husky": "^4.2.5"
+    "husky": "^4.2.5",
+    "standard-version": "^8.0.2"
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "dependencies": {
